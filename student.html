@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>학생용 - 모둠 접속 화면</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+  <!-- Load MQTT.js for internet sync -->
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="gameData.js"></script>
+  <script src="store.js"></script>
+  <script src="student.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1st argument (false) means this is Student
+      window.STORE.init(false); 
+      window.StudentApp.init(document.getElementById("app"));
+    });
+  </script>
+</body>
+</html>

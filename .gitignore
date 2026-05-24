@@ -1,0 +1,8 @@
+# 배포 불필요 파일
+work_summary.md
+app.js
+
+# OS 파일
+.DS_Store
+Thumbs.db
+desktop.ini

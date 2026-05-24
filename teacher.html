@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>선생님용 - 퀴즈게임 관리자</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+  <!-- Load MQTT.js for internet sync -->
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+</head>
+<body>
+  <div id="app"></div>
+  <button class="btn" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; background: var(--danger); color: white; padding: 0.8rem 1.5rem; border-radius: 50px;" onclick="if(confirm('정말 게임을 전체 초기화하시겠습니까? 진행 상황이 모두 삭제됩니다.')) window.STORE.reset()">초기화 🔄</button>
+
+  <script src="gameData.js"></script>
+  <script src="store.js"></script>
+  <script src="teacher.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1st argument (true) means this is Teacher
+      window.STORE.init(true); 
+      window.TeacherApp.init(document.getElementById("app"));
+    });
+  </script>
+</body>
+</html>
